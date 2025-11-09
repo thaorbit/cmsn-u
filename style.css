@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
     background: #000;
     cursor: none;
-    background: url(/imgs/pepe_bg.jpg) center/cover fixed no-repeat;
+    background: url(./imgs/pepe_bg.jpg) center/cover fixed no-repeat;
 }
 
 /* ========================================
@@ -657,7 +657,7 @@ section {
     position: relative;
     width: 100%;
     height: 400px;
-    background: url(/imgs/bg2.jpg) center/cover no-repeat;
+    background: url(./imgs/bg2.jpg) center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
