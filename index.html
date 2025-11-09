@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Sinh Nhật Vui Vẻ bạn Nguyễn Hà Phương Uyên 🎂</title>
+
+  <!-- Thư viện -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Nhạc nền -->
+  <audio id="bg-music" src="src/cat_music.mp3" autoplay loop></audio>
+
+  <!-- Nút bật/tắt nhạc -->
+  <div id="music-toggle" class="music-toggle">🔊</div>
+
+  <!-- Canvas 3D -->
+  <canvas id="canvas3d"></canvas>
+
+  <!-- Con trỏ tùy chỉnh -->
+  <div class="cursor">🐸</div>
+
+  <!-- Toàn bộ nội dung -->
+  <div class="content-wrapper">
+
+    <!-- SECTION 1: HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">CHÚC MỪNG<br>SINH NHẬT!</h1>
+        <p class="hero-subtitle">🎉 🎊 🎈 🎁 🎂 ✨</p>
+      </div>
+
+      <!-- Pepe + Star Floating -->
+      <div class="pepe-float" style="left: 10%; top: 20%;">🐸</div>
+      <div class="pepe-float" style="right: 10%; top: 30%; animation-delay: 0.5s;">🐸</div>
+      <div class="pepe-float" style="left: 15%; bottom: 25%; animation-delay: 1s;">🐸</div>
+      <div class="pepe-float" style="right: 15%; bottom: 35%; animation-delay: 1.5s;">🐸</div>
+
+      <div class="star" style="left: 25%; top: 15%;">⭐</div>
+      <div class="star" style="right: 25%; top: 25%; animation-delay: 0.5s;">✨</div>
+      <div class="star" style="left: 30%; bottom: 20%; animation-delay: 1s;">💫</div>
+    </section>
+
+    <!-- SECTION 2: MESSAGE -->
+    <section id="message">
+      <div class="card-3d">
+        <div class="card-face">
+          <h2>🎁 MỞ ĐẦU 🎁</h2>
+          <p>
+            Chúc bạn một năm mới tràn đầy niềm vui,<br>
+            hạnh phúc và thành công rực rỡ! 🌟<br><br>
+        
+            Mong bạn luôn mạnh khỏe, yêu đời và<br>
+            bao nuôi mình nữa nhé! 💚🐸<br><br>
+          </p>
+        </div>
+      </div>
+
+      <!-- Ảnh mèo bay -->
+      <div class="pepe-float" style="left: 5%; top: 30%; animation-delay: 0.3s;">
+        <img src="/imgs/cat1.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 5%; top: 40%; animation-delay: 0.8s;">
+        <img src="/imgs/cat2.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 10%; bottom: 30%; animation-delay: 1.3s;">
+        <img src="/imgs/cat3.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 10%; bottom: 20%; animation-delay: 1.8s;">
+        <img src="/imgs/cat4.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 15%; bottom: 25%; animation-delay: 1.3s;">
+        <img src="/imgs/cat5.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 15%; bottom: 15%; animation-delay: 1.8s;">
+        <img src="/imgs/cat6.jpg" class="pepe-img" />
+      </div>
+    </section>
+
+    <!-- SECTION 3: CAKE -->
+    <section id="cake">
+      <div class="cake-container">
+        <div class="cake-big">🎂</div>
+        <p class="cake-text">THỔI NẾN ĐI NÀO! 🎉</p>
+        <div class="speech-bubble">🐸 Chúc mừng sinh nhật! Mau thổi nến đi!</div>
+      </div>
+
+      <!-- Ảnh hamster -->
+      <div class="pepe-float" style="left: 10%; top: 20%;">
+        <img src="/imgs/ham1.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 10%; top: 30%; animation-delay: 0.4s;">
+        <img src="/imgs/ham2.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 15%; bottom: 25%; animation-delay: 0.8s;">
+        <img src="/imgs/ham3.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 15%; bottom: 35%; animation-delay: 1.2s;">
+        <img src="/imgs/ham4.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 50%; top: 10%; animation-delay: 1.6s;">
+        <img src="/imgs/ham5.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 50%; bottom: 15%; animation-delay: 2s;">
+        <img src="/imgs/ham6.jpg" class="pepe-img" />
+      </div>
+    </section>
+
+    <!-- SECTION 4: letters -->
+    <section id="final">
+      <div class="final-wrapper">
+            <h2 class="final-title">HAPPY BIRTHDAY!</h2>
+            <div>
+            <span class="final-emoji">🎊</span>
+            <span class="final-emoji" style="animation-delay: 0.3s;">🎉</span>
+            <span class="final-emoji" style="animation-delay: 0.6s;">🎈</span>
+            </div>
+        </div>
+
+        <!-- Lá thư từ Chuột -->
+        <div class="letter-float" style="left: 15%; top: 25%; animation-delay: 0s;">
+            <div class="letter-card">
+            <div class="letter-icon">🐭</div>
+            <div class="letter-content">
+                <p>chít~ chít chittt~ chít~ chít chittt~</p>
+                <p class="letter-signature">- Con chuột tu chai dầu</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Lá thư từ Gián -->
+        <div class="letter-float" style="right: 15%; top: 30%; animation-delay: 0.8s;">
+            <div class="letter-card">
+            <div class="letter-icon">🪳</div>
+            <div class="letter-content">
+                <p>rẹt~ rẹttt~ rẹt rẹt rẹttt~!</p>
+                <p class="letter-signature">- Gián-san bị đầu độc bởi vũ khí hóa học</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Lá thư từ Ếch -->
+        <div class="letter-float" style="left: 50%; bottom: 25%; animation-delay: 1.6s;">
+            <div class="letter-card">
+            <div class="letter-icon">🐸</div>
+            <div class="letter-content">
+                <p>ộp ộppp~ òppp~ òppp~ ộp ộppp~ òppp~ òppp~!💚</p>
+                <p class="letter-signature">- Ngài Pepe</p>
+            </div>
+            </div>
+        </div>
+
+      <!-- Ảnh pepe -->
+      <div class="pepe-float" style="left: 10%; top: 20%;">
+        <img src="/imgs/pepe.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 10%; top: 30%; animation-delay: 0.4s;">
+        <img src="/imgs/pepe2.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 15%; bottom: 25%; animation-delay: 0.8s;">
+        <img src="/imgs/pepe.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 15%; bottom: 35%; animation-delay: 1.2s;">
+        <img src="/imgs/pepe4.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="left: 50%; top: 10%; animation-delay: 1.6s;">
+        <img src="/imgs/pepe5.jpg" class="pepe-img" />
+      </div>
+      <div class="pepe-float" style="right: 50%; bottom: 15%; animation-delay: 2s;">
+        <img src="/imgs/pepe6.jpg" class="pepe-img" />
+      </div>
+    </section>
+
+    <!-- SECTION 5: GIFT -->
+    <section id="gift">
+      <div class="gift-wrapper">
+        <h2 class="gift-title">🎁 MÓN QUÀ ĐẶC BIỆT 🎁</h2>
+
+        <div class="gift-box" id="giftBox">
+          <img src="/imgs/gb.jpg" alt="Gift Box" class="gift-img" />
+        </div>
+        <p class="gift-hint">✨ Nhấn vào để mở quà ✨</p>
+
+        <div class="gift-content" id="giftContent">
+          <div class="plant-info">
+            <img src="/imgs/sp.jpg" alt="Cây Lưỡi Hổ" class="plant-img" />
+            <div class="plant-text">
+              <h3>🪴 Cây Lưỡi Hổ </h3>
+               <p>☀️ <b>Ánh sáng:</b> Ưa sáng tán xạ, chịu bóng nhẹ. Cho cây tắm nắng sáng 1–2 buổi/tuần.</p>
+                <p>💧 <b>Tưới nước:</b> Ít nước; 1 tuần/lần (mùa nóng), 10–14 ngày/lần (mùa lạnh). Tránh đọng nước trong lá.</p>
+                <p>🌡️ <b>Nhiệt độ:</b> 18–30°C, tránh gió lạnh và điều hòa thổi trực tiếp.</p>
+                <p>🌾 <b>Đất & chậu:</b> Đất thoát nước tốt, chậu có lỗ. Dùng hỗn hợp đất + tro trấu + xơ dừa + cát.</p>
+                <p>🌿 <b>Bón phân:</b> 1–2 tháng/lần với phân hữu cơ loãng. Lá nhăn → thiếu nước/sáng.</p>
+                <p>✂️ <b>Vệ sinh:</b> Lau lá 2–3 tuần/lần, cắt lá úa cho cây khỏe.</p>
+                <p>💫 <b>Phong thủy:</b> Hút tài lộc, hợp mệnh Kim – Mộc – Thủy, biểu trưng cho bền bỉ & thịnh vượng.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: LETTER -->
+    <section id="letter-section">
+      <div class="letter-wrapper">
+        <div id="letter-icon" class="letter-icon">
+          <img src="/imgs/letter.jpg" alt="Letter Icon" class="letter-img" />
+        </div>
+
+        <!-- Popup lá thư -->
+        <div id="letter-popup" class="letter-popup">
+          <div class="letter-content">
+            <div class="letter-close">✖</div>
+            <h2>Thư Chúc Mừng 🎉</h2>
+            <p>
+              Chúc bạn một sinh nhật thật vui vẻ!<br>
+              Thư đến hơi muộn vì mình quằn quại trong kì thi cuối kỳ, xong phát là mình cho bạn 
+              "mù mắt" luôn, bạn thấy có sặc sỡ, bảy màu không, phải gọi là quá oách xà lách luôn. 
+              Ôi mình xàm chó quá, nói chung là chúc bạn thủ khoa đầu ra, tiền đầy túi, chuột đầy nhà,
+              phấn đấu bao nuôi mình nhé bạn, sinh nhật vui vẻ nha! 💚🐸
+            </p>
+            <img src="/imgs/heartcat.jpg" alt="Decor" class="letter-decor" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+</body>
+</html>
